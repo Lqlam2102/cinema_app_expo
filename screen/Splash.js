@@ -15,7 +15,7 @@ const Splash = ({ navigation }) => {
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((authUser) => {
       if (authUser) {
-        navigation.replace("Register");
+        navigation.replace("BottomStack");
       } else {
         navigation.replace("Login");
       }

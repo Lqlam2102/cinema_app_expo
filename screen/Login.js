@@ -9,6 +9,7 @@ import {
 import { StatusBar } from "expo-status-bar";
 import styled from "styled-components/native";
 import { auth, db } from "../firebase";
+import Header from "../components/Header";
 
 const Container = styled.ScrollView`
   flex: 1;
@@ -104,12 +105,11 @@ const Login = ({ navigation }) => {
     auth
       .signInWithEmailAndPassword(email, password)
       .then((authUser) => {
-        // navigation.replace("BottomStack");
+        navigation.replace("BottomStack");
         setPassword("");
         setEmail("");
         console.log(authUser);
         setLoading(false);
-        alert("Dang nhap ok");
       })
       .catch((err) => {
         setLoading(false);
@@ -128,6 +128,7 @@ const Login = ({ navigation }) => {
           style={{ flex: 1, height: Dimensions.get("window").height }}
         >
           <Overlay>
+            <Header login={false} />
             <FormWrapper>
               <Form>
                 <SignInText>Sign In</SignInText>
