@@ -7,6 +7,7 @@ import { LinearGradient } from "expo-linear-gradient";
 import styled from "styled-components/native";
 import Header from "../components/Header";
 import HeaderTabs from "../components/HeaderTabs";
+import Hero from "../components/Hero";
 
 const Container = styled.ScrollView`
   flex: 1;
@@ -47,6 +48,7 @@ const Home = ({ navigation }) => {
           >
             <Header login={true} navigation={navigation} />
             <HeaderTabs />
+            <Hero user={true} />
           </Gradient>
         </Poster>
       </Container>
